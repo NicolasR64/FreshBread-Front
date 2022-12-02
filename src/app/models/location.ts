@@ -1,4 +1,4 @@
-export class Implantation{
+export class Location{
     id!: number;
     adress!: string;
     name!: string;

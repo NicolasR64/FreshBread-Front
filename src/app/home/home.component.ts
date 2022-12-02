@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Implantation } from '../models/implantation';
+import { Location } from '../models/location';
 
 @Component({
   selector: 'app-home',
@@ -7,7 +7,7 @@ import { Implantation } from '../models/implantation';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
-  locations: Implantation[] = [
+  locations: Location[] = [
     {
       id: 1,
       adress: 'avenue du centenaire',
@@ -28,5 +28,5 @@ export class HomeComponent {
     },
   ];
 
-
+  constructor(){}
 }

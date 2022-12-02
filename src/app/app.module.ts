@@ -15,13 +15,15 @@ import {MatListModule} from '@angular/material/list';
 import { HomeComponent } from './home/home.component';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatCardModule} from '@angular/material/card';
+import { BakeryComponent } from './bakery/bakery.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     PrimaryNavBarComponent,
-    HomeComponent
+    HomeComponent,
+    BakeryComponent
   ],
   imports: [
     BrowserModule,

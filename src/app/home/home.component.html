@@ -10,7 +10,7 @@
                 </mat-card-header>
                 <img mat-card-image src="../../assets/img/{{location.img}}" alt="Implantations de Montignies-sur-sambre">
                 <mat-card-actions>
-                    <button [routerLink]="['/bakery/{{location.id}}']" mat-raised-button color="primary">Choisir</button>
+                    <button [routerLink]="['/bakery', location.id]" mat-raised-button color="primary">Choisir</button>
                 </mat-card-actions>
             </mat-card>
         </div>
