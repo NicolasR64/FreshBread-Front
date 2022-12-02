@@ -1,0 +1,47 @@
+/* NavBar */
+
+.spacer{
+    flex: 1 1 auto;
+}
+
+a{
+    transition: 0.5s;
+    color: unset;
+    text-decoration: unset;
+}
+
+a:hover{
+    transition: 0.5s;
+    color: #E1c699;
+}
+
+.buttonNavBar{
+    transition: 0.5s;
+}
+
+.buttonNavBar:hover{
+    transition: 0.5s;
+    color: #E1c699;
+}
+
+span{
+    margin-left: 25px;
+}
+
+@media screen and (min-width: 700px){
+    #drawerToggle-Icon{
+        display: none;
+    }
+
+}
+
+@media screen and (max-width: 700px){
+    #drawerToggle-Icon{
+        display: block;
+    }
+    
+    .navbar-link{
+        display: none;
+    }
+
+}

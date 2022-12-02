@@ -1,3 +1,20 @@
-<mat-toolbar>
-    <mat-toolbar-row></mat-toolbar-row>
-</mat-toolbar>
+  <mat-drawer-container class="example-container">
+    <mat-drawer #drawer  mode="over" closed>Drawer content</mat-drawer>
+    <mat-drawer-content>
+        <mat-toolbar color="primary">
+            <button mat-icon-button (click)="drawer.toggle()" id="drawerToggle-Icon" aria-label="Example icon-button with menu icon">
+              <mat-icon>menu</mat-icon>
+            </button>
+            <span>FreshBread</span>
+            <span class="spacer"></span>
+            <span class="navbar-link"><a [routerLink]="['/home']">Home</a></span>
+            <span class="navbar-link"><a [routerLink]="['/adinistration']">Administration</a></span>
+            <span class="navbar-link"><a [routerLink]="['/location']">Implantation</a></span>
+            <span class="navbar-link ">
+              <button mat-icon-button class="buttonNavBar" aria-label="Button to login or registration">
+                <mat-icon [routerLink]="['/registration']">account_circle</mat-icon>
+              </button>
+            </span>
+          </mat-toolbar>
+    </mat-drawer-content>
+  </mat-drawer-container>
