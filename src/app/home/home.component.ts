@@ -11,7 +11,7 @@ export class HomeComponent {
     {
       id: 1,
       adress: 'avenue du centenaire',
-      name: 'montignies-sur-sambre',
+      name: 'montignies',
       img: 'montignies.png'
     },
     {

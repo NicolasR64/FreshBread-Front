@@ -9,15 +9,20 @@ import { Subscription } from 'rxjs';
 })
 export class BakeryComponent implements OnInit{
 
-  location: Location|undefined;
+  /* bakery: Bakery|undefined; */
+/*   bakery: Location = 
+  {
+    id: 2,
+
+  } */
   constructor(private route: ActivatedRoute,){}
 
   ngOnInit(){
     let bakeryId: number|any = this.route.snapshot.paramMap.get('id');
     if(bakeryId){
-      //this.location = this.SLocation.fin(location => location.id == bakeryId)
+      //this.location = this.SLocation.fin(bakery => bakery.id == bakeryId)
     }else{
-      this.location = undefined;
+      /* this.location = undefined; */
     }
   }
 

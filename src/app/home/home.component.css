@@ -14,3 +14,11 @@
     height: 150px;
 }
 
+mat-card-title{
+    text-transform: uppercase;
+}
+
+mat-card-content{
+    padding: 0 8px;
+}
+
