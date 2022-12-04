@@ -3,19 +3,25 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
+import { BakeryComponent } from './bakery/bakery.component';
+import { AdministrationComponent } from './administration/administration.component';
+import { PrimaryNavBarComponent } from './primary-nav-bar/primary-nav-bar.component';
+import { HomeComponent } from './home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatButtonModule } from '@angular/material/button';
-import { PrimaryNavBarComponent } from './primary-nav-bar/primary-nav-bar.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import {MatIconModule} from '@angular/material/icon';
-import {MatSidenavModule} from '@angular/material/sidenav';
-import {MatListModule} from '@angular/material/list';
-import { HomeComponent } from './home/home.component';
-import {MatGridListModule} from '@angular/material/grid-list';
-import {MatCardModule} from '@angular/material/card';
-import { BakeryComponent } from './bakery/bakery.component';
+import { MatIconModule } from '@angular/material/icon';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatCardModule } from '@angular/material/card';
+import { MatTableModule } from '@angular/material/table';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+
 
 
 @NgModule({
@@ -23,7 +29,8 @@ import { BakeryComponent } from './bakery/bakery.component';
     AppComponent,
     PrimaryNavBarComponent,
     HomeComponent,
-    BakeryComponent
+    BakeryComponent,
+    AdministrationComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +43,10 @@ import { BakeryComponent } from './bakery/bakery.component';
     MatSidenavModule,
     MatListModule,
     MatGridListModule,
-    MatCardModule
+    MatCardModule,
+    MatTableModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]

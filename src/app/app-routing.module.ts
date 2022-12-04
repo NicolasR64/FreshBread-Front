@@ -1,3 +1,4 @@
+import { AdministrationComponent } from './administration/administration.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { BakeryComponent } from './bakery/bakery.component';
@@ -8,6 +9,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'navigation', component: PrimaryNavBarComponent },
   { path: 'bakery/:id', component: BakeryComponent },
+  { path: 'administration', component: AdministrationComponent },
   { path: '',   redirectTo: '/home', pathMatch: 'full' },
   { path: '**', component: HomeComponent }
 ];
