@@ -1,6 +1,7 @@
 export class Location{
     id!: number;
-    adress!: string;
     name!: string;
+    adress!: string;
+    bakeryId!: number|null;
     img!: string;
 }
