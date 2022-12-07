@@ -1,3 +1,4 @@
+import { AdministrationComponent } from './administration/administration.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { BakeryComponent } from './bakery/bakery.component';
@@ -11,6 +12,7 @@ const routes: Routes = [
   { path: 'bakery/:id', component: BakeryComponent },
   { path: 'cart', component: CartComponentComponent },
   { path: 'cart/:id', component: CartComponentComponent },
+  { path: 'administration', component: AdministrationComponent },
   { path: '',   redirectTo: '/home', pathMatch: 'full' },
   { path: '**', component: HomeComponent }
 ];
