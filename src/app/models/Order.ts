@@ -1,10 +1,11 @@
 import {Location} from "./Location";
+import { Product } from "./Product";
 
 export class Order{
-  id!: number;
+  id!: number|null;
   date!: Date;
-  location!: Location;
-  products!: string;
+  location!: Location|null;
+  products!: Product[]|null;
   state!: string;
   userId!: number;
 }
