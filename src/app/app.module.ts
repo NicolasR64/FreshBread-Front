@@ -16,14 +16,18 @@ import { HomeComponent } from './home/home.component';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatCardModule} from '@angular/material/card';
 import { BakeryComponent } from './bakery/bakery.component';
-
+import { CartComponentComponent } from './cart-component/cart-component.component';
+import {MatTableModule} from '@angular/material/table';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input'
 
 @NgModule({
   declarations: [
     AppComponent,
     PrimaryNavBarComponent,
     HomeComponent,
-    BakeryComponent
+    BakeryComponent,
+    CartComponentComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +40,10 @@ import { BakeryComponent } from './bakery/bakery.component';
     MatSidenavModule,
     MatListModule,
     MatGridListModule,
-    MatCardModule
+    MatCardModule,
+    MatTableModule,
+    MatFormFieldModule,
+    MatInputModule  
   ],
   providers: [],
   bootstrap: [AppComponent]

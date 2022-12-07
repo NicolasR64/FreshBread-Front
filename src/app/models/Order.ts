@@ -8,4 +8,5 @@ export class Order{
   products!: Product[]|null;
   state!: string;
   userId!: number;
+  price!: number;
 }

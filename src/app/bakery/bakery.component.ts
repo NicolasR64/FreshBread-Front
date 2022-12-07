@@ -56,7 +56,8 @@ export class BakeryComponent implements OnInit{
     location: null,
     products: [],
     state: "shopping",
-    userId: 15
+    userId: 15,
+    price: 15
   };
 
   errorMessage: string|null = null;
