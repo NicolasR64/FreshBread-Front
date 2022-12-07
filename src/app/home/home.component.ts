@@ -12,19 +12,22 @@ export class HomeComponent {
       id: 1,
       adress: 'avenue du centenaire',
       name: 'montignies',
-      img: 'montignies.png'
+      img: 'montignies.png',
+      bakeryId: 1
     },
     {
       id: 2,
       adress: 'avenue de gilly',
       name: 'gilly',
-      img: 'gilly.png'
+      img: 'gilly.png',
+      bakeryId: 2
     },
     {
       id: 3,
       adress: 'avenue de gosselies',
       name: 'gosselies',
-      img: 'gosselies.png'
+      img: 'gosselies.png',
+      bakeryId: 3
     },
   ];
 

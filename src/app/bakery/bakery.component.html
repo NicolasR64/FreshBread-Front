@@ -1,1 +1,36 @@
-<p>bakery works!</p>
+<div *ngIf="!errorMessage" class="container">
+    <header>
+        <h1>Implantation : {{location.name}}</h1>
+        <h2>{{bakery.name}}</h2>
+        <p>{{bakery.adress}}</p>
+    </header>
+    <div class="card-container">
+        <mat-card *ngFor="let product of products" class="card">
+            <img mat-card-image src="../../assets/img/products/{{product.picture}}" alt="{{product.name}}">
+            <mat-card-content>
+                <mat-card-title>{{product.name}}</mat-card-title>
+                <p>
+                    {{product.desc}}
+                </p>
+            </mat-card-content>
+            <mat-card-actions>
+                <div class="selectProductCounter-container">
+                    <div class="selectProductCounter-add">
+                        <button (click)="addQty(product.id)" color="primary">+</button>
+                    </div>
+                    <div class="selectProductCounter-counter">
+                        <span>{{product.qty}}</span>
+                    </div>
+                    <div class="selectProductCounter-remove">
+                        <button (click)="removeQty(product.id)" color="primary">-</button>
+                    </div>
+                </div>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+    <br>
+    <button (click)="addInCard()" mat-raised-button color="primary" style="position: sticky;">confirmer commande</button>
+</div>
+<div *ngIf="errorMessage">
+    <h1>{{errorMessage}}</h1>
+</div>

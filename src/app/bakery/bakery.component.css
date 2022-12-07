@@ -1,0 +1,40 @@
+.mat-fab{
+    width: 30px;
+    height: 30px;
+}
+
+.selectProductCounter-container{
+    display: flex;
+    flex-flow: row nowrap;
+    border-radius: 15px;
+    background-color: #f1f1f1;
+    overflow: hidden;
+    width: 100px;
+    height: 25px;
+}
+
+.selectProductCounter-container button{
+    height: 100%;
+    width: 100%;
+    border: 0;
+    background-color: blueviolet;
+}
+
+.selectProductCounter-container button:hover{
+    cursor: pointer;
+}
+
+.selectProductCounter-add{
+    width: 30px;
+}
+
+.selectProductCounter-remove{
+    width: 30px;
+}
+
+.selectProductCounter-counter{
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
