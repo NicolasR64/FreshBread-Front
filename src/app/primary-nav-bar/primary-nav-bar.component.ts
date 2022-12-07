@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { noop } from 'rxjs';
 
 @Component({
   selector: 'app-primary-nav-bar',
@@ -6,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./primary-nav-bar.component.css']
 })
 export class PrimaryNavBarComponent {
-
+  admin = true;
+  connected = true;
 }

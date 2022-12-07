@@ -1,5 +1,21 @@
   <mat-drawer-container class="example-container">
-    <mat-drawer #drawer  mode="over" closed>Drawer content</mat-drawer>
+    <mat-drawer #drawer  mode="over" closed>
+      <div class="sidenav-links-container">
+        <span class="title">FreshBread</span>
+        <span class="spacer"></span>
+        <span class="sidenav-link"><a [routerLink]="['/home']">Home</a></span>
+        <span class="sidenav-link" *ngIf="admin"><a [routerLink]="['/adinistration']">Administration</a></span>
+        <span class="sidenav-link" *ngIf="connected">
+          <a [routerLink]="['/card']">Mes commandes</a>
+        </span>
+        <span class="sidenav-link" *ngIf="!connected">
+          <a [routerLink]="['/registration']">Enregistrement</a>
+        </span>
+        <span class="sidenav-link" *ngIf="connected">
+          <a [routerLink]="['/profile']">Mon profil</a>
+        </span>
+      </div>
+    </mat-drawer>
     <mat-drawer-content>
         <mat-toolbar color="primary">
             <button mat-icon-button (click)="drawer.toggle()" id="drawerToggle-Icon" aria-label="Example icon-button with menu icon">
@@ -8,10 +24,17 @@
             <span>FreshBread</span>
             <span class="spacer"></span>
             <span class="navbar-link"><a [routerLink]="['/home']">Home</a></span>
-            <span class="navbar-link"><a [routerLink]="['/adinistration']">Administration</a></span>
-            <span class="navbar-link"><a [routerLink]="['/location']">Implantation</a></span>
-            <span class="navbar-link ">
-              <button mat-icon-button class="buttonNavBar" aria-label="Button to login or registration">
+            <span class="navbar-link" *ngIf="admin"><a [routerLink]="['/adinistration']">Administration</a></span>
+            <span class="navbar-link" *ngIf="!connected">
+              <a [routerLink]="['/registration']">Enregistrement</a>
+            </span>
+            <span class="navbar-link" *ngIf="connected">
+              <button mat-icon-button class="buttonNavBar" aria-label="Permet de voir son panier et commandes passées">
+                <mat-icon [routerLink]="['/card']">shopping_card</mat-icon>
+              </button>
+            </span>
+            <span class="navbar-link" *ngIf="connected">
+              <button mat-icon-button class="buttonNavBar" aria-label="Permet de voir son login">
                 <mat-icon [routerLink]="['/registration']">account_circle</mat-icon>
               </button>
             </span>
