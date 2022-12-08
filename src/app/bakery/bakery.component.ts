@@ -1,3 +1,4 @@
+import { LocationService } from './../services/LocationService';
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { Subscription } from 'rxjs';
@@ -20,7 +21,7 @@ export class BakeryComponent implements OnInit{
     name: "Boulangerie du petit carré",
     adress: "avenue du petit carré numéro 5, Montignies-sur-sambre 6061",
     userId: 1
-  } 
+  }
 
   products: Product[] = [
     {
@@ -49,7 +50,7 @@ export class BakeryComponent implements OnInit{
     }
   ]
 
-  order: Order = 
+  order: Order =
   {
     id: 1,
     date: new Date(),
@@ -61,27 +62,22 @@ export class BakeryComponent implements OnInit{
 
   errorMessage: string|null = null;
 
-  location: Location = 
-  {
-    id: 7,
-    name: "montignies-sur-sambre",
-    adress: "avenue du centenaire 150, Montignies-sur-sambre 6061",
-    bakeryId: null,
-    img: '/default'
-  };
+  location: any = {};
 
-  constructor(private route: ActivatedRoute,){}
+  constructor(private route: ActivatedRoute, private locationService: LocationService){}
 
   ngOnInit(){
     // retrieve location
     let locationId: number|any = this.route.snapshot.paramMap.get('id');
     if(locationId){
-      // this.location = this.locationService.getLocationById;
+      this.locationService.getLocation(locationId).subscribe((data) => {
+        this.location = data;
+      });
     }else{
       this.errorMessage = "Une erreur inatendue s'est produite, veuillez réessayer plus tard.";
     }
 
-    // retrieve bakery 
+    // retrieve bakery
     // this.bakery = this.bakeryService.getBakeryById();
 
     // retrieve product by bakery
@@ -107,7 +103,7 @@ export class BakeryComponent implements OnInit{
     if(this.products.find(product => product.id == id)!.qty >= 0){
       this.products.find(product => product.id == id)!.qty++;
     }
-    
+
   }
 
   removeQty(id: number){
@@ -133,6 +129,6 @@ export class BakeryComponent implements OnInit{
     this.products.forEach(product => {
       product.qty =0;
     });
-    
+
   }
 }
