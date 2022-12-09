@@ -18,8 +18,11 @@ export class LocationService {
       return of(undefined);
     }));
   }
-  getAllLocation(){
-    return this.http.get(API_URL, {responseType: 'text'}).subscribe();
+  getAllLocation(): Observable<Location|undefined>{
+    return this.http.get<Location>(API_URL).pipe(retry(1), catchError((error) =>{
+      console.log(error);
+      return of(undefined);
+    }));
   }
 
   postLocation(formValue: {id: number , name: string ,adress: string ,bakeryId: number|null ,img: string}): void{

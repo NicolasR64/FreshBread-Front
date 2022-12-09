@@ -1,6 +1,8 @@
 import { HttpClient } from "@angular/common/http";
 import {Injectable} from "@angular/core";
 import {Bakery} from "../models/Bakery";
+import {Location} from "../models/Location";
+import {catchError, Observable, of, retry} from "rxjs";
 
 
 const API_URL = 'http://localhost:8081/bakery';
@@ -11,11 +13,17 @@ const API_URL = 'http://localhost:8081/bakery';
 export class BakeryService {
   constructor(private http: HttpClient) {}
 
-  getBakery(id: number){
-    return this.http.get(API_URL +"/"+ id, {responseType: 'text'}).subscribe();
+  getBakery(id: number): Observable<Bakery|undefined>{
+    return this.http.get<Bakery>(API_URL +"/"+ id).pipe(retry(1), catchError((error) =>{
+      console.log(error);
+      return of(undefined);
+    }));
   }
-  getAllBakery(){
-    return this.http.get(API_URL, {responseType: 'text'}).subscribe();
+  getAllBakery(): Observable<Bakery|undefined>{
+    return this.http.get<Bakery>(API_URL).pipe(retry(1), catchError((error)=>{
+      console.log(error);
+      return of(undefined);
+    }));
   }
 
   postBakery(formValue: {id: number , name: string ,adress: string ,userId: number}){

@@ -1,6 +1,7 @@
 import { HttpClient } from "@angular/common/http";
 import {Injectable} from "@angular/core";
 import {Product} from "../models/Product";
+import {catchError, Observable, of, retry} from "rxjs";
 
 const API_URL = 'http://localhost:8081/product';
 
@@ -10,11 +11,17 @@ const API_URL = 'http://localhost:8081/product';
 export class ProductService {
   constructor(private http: HttpClient) {}
 
-  getProduct(id: number){
-    return this.http.get(API_URL +"/"+ id, {responseType: 'text'}).subscribe();
+  getProduct(id: number):Observable<Product|undefined>{
+    return this.http.get<Product>(API_URL +"/"+ id).pipe(retry(1), catchError((error)=>{
+      console.log;
+      return of(undefined);
+    }));
   }
-  getAllProduct(){
-    return this.http.get(API_URL, {responseType: 'text'}).subscribe();
+  getAllProduct():Observable<Product|undefined>{
+    return this.http.get<Product>(API_URL).pipe(retry(1), catchError((error)=>{
+      console.log;
+      return of(undefined);
+    }));
   }
 
   postProduct(formValue: {id: number , name: string, price: number, qty: number, desc: string, picture: string}){
