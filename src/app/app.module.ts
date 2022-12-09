@@ -1,13 +1,14 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
+import { HttpClientModule } from '@angular/common/http';
 
+import { AppComponent } from './app.component';
 import { BakeryComponent } from './bakery/bakery.component';
 import { AdministrationComponent } from './administration/administration.component';
 import { PrimaryNavBarComponent } from './primary-nav-bar/primary-nav-bar.component';
 import { HomeComponent } from './home/home.component';
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
@@ -33,6 +34,7 @@ import { CartComponentComponent } from './cart-component/cart-component.componen
     CartComponentComponent
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
