@@ -4,7 +4,7 @@
         <span class="title">FreshBread</span>
         <span class="spacer"></span>
         <span class="sidenav-link"><a [routerLink]="['/home']">Home</a></span>
-        <span class="sidenav-link" *ngIf="admin"><a [routerLink]="['/adinistration']">Administration</a></span>
+        <span class="sidenav-link" *ngIf="admin"><a [routerLink]="['/administration']">Administration</a></span>
         <span class="sidenav-link" *ngIf="connected">
           <a [routerLink]="['/card']">Mes commandes</a>
         </span>
@@ -24,19 +24,30 @@
             <span>FreshBread</span>
             <span class="spacer"></span>
             <span class="navbar-link"><a [routerLink]="['/home']">Home</a></span>
-            <span class="navbar-link" *ngIf="admin"><a [routerLink]="['/adinistration']">Administration</a></span>
+            <span class="navbar-link" *ngIf="admin"><a [routerLink]="['/administration']">Administration</a></span>
             <span class="navbar-link" *ngIf="!connected">
               <a [routerLink]="['/registration']">Enregistrement</a>
             </span>
             <span class="navbar-link" *ngIf="connected">
-              <button mat-icon-button class="buttonNavBar" aria-label="Permet de voir son panier et commandes passées">
-                <mat-icon [routerLink]="['/card']">shopping_card</mat-icon>
-              </button>
+              <a [routerLink]="['/card']">
+                <button mat-icon-button class="buttonNavBar" aria-label="Permet de voir son panier et commandes passées">
+                  <mat-icon>shopping_card</mat-icon>
+                </button>
+              </a>
+            </span>
+            <span class="navbar-link" *ngIf="!connected">
+              <a [routerLink]="['/registration']">
+                <button mat-icon-button class="buttonNavBar" aria-label="Permet de voir son login">
+                  <mat-icon>account_circle</mat-icon>
+                </button>
+              </a>
             </span>
             <span class="navbar-link" *ngIf="connected">
-              <button mat-icon-button class="buttonNavBar" aria-label="Permet de voir son login">
-                <mat-icon [routerLink]="['/registration']">account_circle</mat-icon>
-              </button>
+              <a [routerLink]="['/profile']">
+                <button mat-icon-button class="buttonNavBar" aria-label="Permet de voir son login">
+                  <mat-icon>person</mat-icon>
+                </button>
+              </a>
             </span>
           </mat-toolbar>
           <main>
