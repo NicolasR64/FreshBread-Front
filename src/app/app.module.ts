@@ -31,7 +31,8 @@ import { CartComponentComponent } from './cart-component/cart-component.componen
     PrimaryNavBarComponent,
     HomeComponent,
     BakeryComponent,
-    CartComponentComponent
+    CartComponentComponent,
+    AdministrationComponent
   ],
   imports: [
     HttpClientModule,
