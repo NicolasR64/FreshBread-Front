@@ -7,4 +7,9 @@ table {
   width: 100%;
 }
 
+.table-container{
+  max-height: 400px;
+  overflow: scroll;
+}
+
 

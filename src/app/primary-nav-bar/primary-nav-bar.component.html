@@ -6,7 +6,7 @@
         <span class="sidenav-link"><a [routerLink]="['/home']">Home</a></span>
         <span class="sidenav-link" *ngIf="admin"><a [routerLink]="['/administration']">Administration</a></span>
         <span class="sidenav-link" *ngIf="connected">
-          <a [routerLink]="['/card']">Mes commandes</a>
+          <a [routerLink]="['/cart  ']">Mes commandes</a>
         </span>
         <span class="sidenav-link" *ngIf="!connected">
           <a [routerLink]="['/registration']">Enregistrement</a>
@@ -17,7 +17,7 @@
       </div>
     </mat-drawer>
     <mat-drawer-content>
-        <mat-toolbar color="primary">
+        <mat-toolbar color="primary" class="sticky">
             <button mat-icon-button (click)="drawer.toggle()" id="drawerToggle-Icon" aria-label="Example icon-button with menu icon">
               <mat-icon>menu</mat-icon>
             </button>
@@ -29,7 +29,7 @@
               <a [routerLink]="['/registration']">Enregistrement</a>
             </span>
             <span class="navbar-link" *ngIf="connected">
-              <a [routerLink]="['/card']">
+              <a [routerLink]="['/cart']">
                 <button mat-icon-button class="buttonNavBar" aria-label="Permet de voir son panier et commandes passées">
                   <mat-icon>shopping_card</mat-icon>
                 </button>
@@ -50,6 +50,7 @@
               </a>
             </span>
           </mat-toolbar>
+          <div class="spacer-toolbar"></div>
           <main>
             <router-outlet></router-outlet>
         </main>

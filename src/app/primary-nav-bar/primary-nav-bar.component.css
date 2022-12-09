@@ -1,5 +1,15 @@
 /* NavBar */
 
+.sticky{
+    position: fixed;
+    z-index: 100;
+}
+
+.spacer-toolbar{
+    width: 100%;
+    height: 70px;
+}
+
 .spacer{
     flex: 1 1 auto;
 }
