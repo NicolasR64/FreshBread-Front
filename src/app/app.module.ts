@@ -8,6 +8,7 @@ import { BakeryComponent } from './bakery/bakery.component';
 import { AdministrationComponent } from './administration/administration.component';
 import { PrimaryNavBarComponent } from './primary-nav-bar/primary-nav-bar.component';
 import { HomeComponent } from './home/home.component';
+import { CartComponentComponent } from './cart-component/cart-component.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -19,10 +20,11 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
-import {MatTableModule} from '@angular/material/table';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatInputModule} from '@angular/material/input';
-import { CartComponentComponent } from './cart-component/cart-component.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 @NgModule({
@@ -49,7 +51,9 @@ import { CartComponentComponent } from './cart-component/cart-component.componen
     MatCardModule,
     MatTableModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatPaginatorModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]
