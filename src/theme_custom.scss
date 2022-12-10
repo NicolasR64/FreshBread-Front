@@ -1,0 +1,85 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+$helha-primary-palette: (
+ 50: #e0f2f2,
+ 100: #b3dfde,
+ 200: #81cbc9,
+ 300: #4db7b3,
+ 400: #26a7a1,
+ 500: #00978f,
+ 600: #008a82,
+ 700: #017a71,
+ 800: #036a62,
+ 900: #044e45,
+ contrast: (
+   50: rgba(black, 0.87),
+   100: rgba(black, 0.87),
+   200: rgba(black, 0.87),
+   300: rgba(black, 0.87),
+   400: white,
+   500: white,
+   600: white,
+   700: white,
+   800: white,
+   900: white,
+ )
+);
+
+$helha-accent-palette: (
+ 50: #fbfbfb,
+ 100: #f6f6f6,
+ 200: #f1f1f1,
+ 300: #e4e4e4,
+ 400: #c2c2c2,
+ 500: #a3a3a3,
+ 600: #7a7a7a,
+ 700: #656565,
+ 800: #464646,
+ 900: #252525,
+ contrast: (
+   50: white,
+   100: white,
+   200: white,
+   300: white,
+   400: white,
+   500: white,
+   600: white,
+   700: white,
+   800: white,
+   900: white,
+ )
+);
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$freshbread-front-primary: mat.define-palette($helha-primary-palette, 500);
+$freshbread-front-accent: mat.define-palette($helha-accent-palette, 200);
+
+// The warn palette is optional (defaults to red).
+$freshbread-front-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$freshbread-front-theme: mat.define-light-theme((
+  color: (
+    primary: $freshbread-front-primary,
+    accent: $freshbread-front-accent,
+    warn: $freshbread-front-warn,
+  )
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($freshbread-front-theme);
+
