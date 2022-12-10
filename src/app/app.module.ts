@@ -9,7 +9,8 @@ import { AdministrationComponent } from './administration/administration.compone
 import { PrimaryNavBarComponent } from './primary-nav-bar/primary-nav-bar.component';
 import { HomeComponent } from './home/home.component';
 import { CartComponentComponent } from './cart-component/cart-component.component';
-import { AddDialogComponent } from './dialogs/addUser/addUser.dialog.component';
+import { AddUserDialogComponent } from './dialogs/add-user/add-user.component';
+import { UpdateUserDialogComponent } from './dialogs/update-user/update-user.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -36,7 +37,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     BakeryComponent,
     CartComponentComponent,
     AdministrationComponent,
-    AddDialogComponent
+    AddUserDialogComponent,
+    UpdateUserDialogComponent
   ],
   imports: [
     HttpClientModule,
