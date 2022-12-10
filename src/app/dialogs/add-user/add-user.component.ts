@@ -5,12 +5,12 @@ import { FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-add.dialog',
-  templateUrl: '../../dialogs/addUser/addUser.dialog.html',
-  styleUrls: ['../../dialogs/addUser/addUser.dialog.css']
+  templateUrl: '../../dialogs/add-user/add-user.component.html',
+  styleUrls: ['../../dialogs/add-user/add-user.component.css']
 })
 
-export class AddDialogComponent {
-  constructor(public dialogRef: MatDialogRef<AddDialogComponent>, public userService: UserService) { }
+export class AddUserDialogComponent {
+  constructor(public dialogRef: MatDialogRef<AddUserDialogComponent>, public userService: UserService) { }
 
   formControl = new FormControl('', [
     Validators.required
