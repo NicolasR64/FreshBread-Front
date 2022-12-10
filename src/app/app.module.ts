@@ -11,6 +11,7 @@ import { HomeComponent } from './home/home.component';
 import { CartComponentComponent } from './cart-component/cart-component.component';
 import { AddUserDialogComponent } from './dialogs/add-user/add-user.component';
 import { UpdateUserDialogComponent } from './dialogs/update-user/update-user.component';
+import { DeleteUserDialogComponent } from './dialogs/delete-user/delete-user.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -38,7 +39,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     CartComponentComponent,
     AdministrationComponent,
     AddUserDialogComponent,
-    UpdateUserDialogComponent
+    UpdateUserDialogComponent,
+    DeleteUserDialogComponent
   ],
   imports: [
     HttpClientModule,

@@ -6,6 +6,7 @@ import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { AddUserDialogComponent } from '../dialogs/add-user/add-user.component';
 import { UpdateUserDialogComponent } from '../dialogs/update-user/update-user.component';
+import { DeleteUserDialogComponent } from '../dialogs/delete-user/delete-user.component';
 
 
 // only for test, delete for production
@@ -182,5 +183,18 @@ export class AdministrationComponent implements OnInit{
       }
     });
   }
-  deleteItem(){}
+  deleteItem(){
+    const dialogRef = this.dialogService.open(DeleteUserDialogComponent, {
+      data: {issue: {} }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result === 1) {
+        // After dialog is closed we're doing frontend updates
+        // For add we're just pushing a new row inside DataService
+        /* this.exampleDatabase.dataChange.value.push(this.dataService.getDialogData());
+        this.refreshTable(); */
+      }
+    });
+  }
 }
