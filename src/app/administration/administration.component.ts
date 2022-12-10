@@ -4,6 +4,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator, PageEvent } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
+import { AddDialogComponent } from '../dialogs/addUser/addUser.dialog.component';
 
 
 // only for test, delete for production
@@ -152,7 +153,7 @@ export class AdministrationComponent implements OnInit{
 
 
   openAddDialog(){
-/*     const dialogRef = this.dialogService.open(AddDialogComponent, {
+    const dialogRef = this.dialogService.open(AddDialogComponent, {
       data: {issue: {} }
     });
 
@@ -160,10 +161,10 @@ export class AdministrationComponent implements OnInit{
       if (result === 1) {
         // After dialog is closed we're doing frontend updates
         // For add we're just pushing a new row inside DataService
-        this.exampleDatabase.dataChange.value.push(this.dataService.getDialogData());
-        this.refreshTable();
+        /* this.exampleDatabase.dataChange.value.push(this.dataService.getDialogData());
+        this.refreshTable(); */
       }
-    }); */
+    });
   }
   startEdit(){}
   deleteItem(){}
