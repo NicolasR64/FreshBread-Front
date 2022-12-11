@@ -40,7 +40,7 @@ mat-card-title{
 }
 
 mat-card-content{
-    padding: 0 8px;
+    padding: 5px 9px 0px 9px!important;
 }
 
 /* Link */
@@ -49,4 +49,9 @@ a{
     color: unset;
     text-decoration: unset;
     font-weight: 500;
+}
+
+/* button */
+button{
+    font-weight: 600;
 }
