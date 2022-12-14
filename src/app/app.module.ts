@@ -27,6 +27,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatDialogModule } from '@angular/material/dialog';
+import { OrderDetailsComponent } from './order-details/order-details.component';
+import { AdministationUsersComponent } from './administation-users/administation-users.component';
 
 
 @NgModule({
@@ -39,7 +41,9 @@ import { MatDialogModule } from '@angular/material/dialog';
     AdministrationComponent,
     AddUserDialogComponent,
     UpdateUserDialogComponent,
-    DeleteUserDialogComponent
+    DeleteUserDialogComponent,
+    OrderDetailsComponent,
+    AdministationUsersComponent
   ],
   imports: [
     HttpClientModule,
