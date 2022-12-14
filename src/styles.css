@@ -35,13 +35,15 @@ body { margin: 0; font-family: 'Roboto', "Helvetica Neue", sans-serif; }
     height: 150px;
 }
 
+mat-card{
+    margin-bottom: 25px;
+}
+
 mat-card-title{
     text-transform: uppercase;
 }
 
-mat-card-content{
-    padding: 5px 9px 0px 9px!important;
-}
+
 
 /* Link */
 
@@ -55,3 +57,19 @@ a{
 button{
     font-weight: 600;
 }
+
+
+@media screen and (max-width: 700px) {
+    .container{
+        padding: 0;
+    }
+
+    mat-card-content{
+        overflow: scroll;
+    }
+
+    .overflow-scroll{
+        overflow: scroll;
+    }
+
+}   
