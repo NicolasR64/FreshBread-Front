@@ -17,9 +17,9 @@ export class ProductService {
       return of(undefined);
     }));
   }
-  getAllProduct():Observable<Product|undefined>{
-    return this.http.get<Product>(API_URL).pipe(retry(1), catchError((error)=>{
-      console.log;
+  getAllProduct():Observable<Product[]|undefined>{
+    return this.http.get<Product[]>(API_URL).pipe(retry(1), catchError((error)=>{
+      console.log('error');
       return of(undefined);
     }));
   }
