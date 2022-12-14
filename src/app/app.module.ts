@@ -14,7 +14,6 @@ import { UpdateUserDialogComponent } from './dialogs/update-user/update-user.com
 import { DeleteUserDialogComponent } from './dialogs/delete-user/delete-user.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
