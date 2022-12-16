@@ -26,6 +26,7 @@ export class OrderDetailsComponent {
       qty: 2,
       desc: "délicieux pain au chocolat fait maison à partir d'ingrédient naturelle et de qualité!",
       picture: '/painAuChocolat.jpg',
+      bakeryId: 1
     },
     {
       id: 2,
@@ -34,6 +35,7 @@ export class OrderDetailsComponent {
       qty: 1,
       desc: "délicieux croissant fait maison à partir d'ingrédient naturelle et de qualité!",
       picture: '/croissant.jpg',
+      bakeryId: 1
     },
     {
       id: 3,
@@ -42,6 +44,7 @@ export class OrderDetailsComponent {
       qty: 4,
       desc: "Baguette fait maison à partir d'ingrédient naturelle et de qualité!",
       picture: '/baguette.jpg',
+      bakeryId: 1
     },
   ];
 

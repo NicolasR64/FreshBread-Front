@@ -1,8 +1,6 @@
 <div *ngIf="!errorMessage" class="container">
     <header>
-        <h1>Implantation : {{location.name}}</h1>
-        <h2>{{bakery.name}}</h2>
-        <p>{{bakery.adress}}</p>
+        <h1>Implantation : {{order.location?.name}}</h1>
     </header>
     <div class="card-container">
         <mat-card *ngFor="let product of products" class="card">
@@ -13,16 +11,20 @@
                     {{product.desc}}
                 </p>
             </mat-card-content>
-            <mat-card-actions>
-                <div class="selectProductCounter-container">
-                    <div class="selectProductCounter-add">
-                        <button (click)="addQty(product.id)" color="primary">+</button>
+            <mat-card-actions align="end">
+                <div class="flex-container">
+                    <div class="card-action">
+                        <button mat-mini-fab (click)="addQty(product.id)" color="primary">
+                            <mat-icon>add</mat-icon>
+                        </button>
                     </div>
-                    <div class="selectProductCounter-counter">
+                    <div class="card-action-result">
                         <span>{{product.qty}}</span>
                     </div>
-                    <div class="selectProductCounter-remove">
-                        <button (click)="removeQty(product.id)" color="primary">-</button>
+                    <div class="card-action">
+                        <button mat-mini-fab (click)="removeQty(product.id)" color="primary">
+                            <mat-icon>remove</mat-icon>
+                        </button>
                     </div>
                 </div>
             </mat-card-actions>

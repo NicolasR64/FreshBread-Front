@@ -5,4 +5,5 @@ export class Product{
   qty!: number;
   desc!: string;
   picture!: string;
+  bakeryId!: number;
 }

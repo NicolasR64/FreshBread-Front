@@ -22,6 +22,14 @@ export class BakeryComponent implements OnInit{
     adress: "avenue du petit carré numéro 5, Montignies-sur-sambre 6061",
     userId: 1
   }
+  
+  location01: Location = {
+    id: 1,
+    name: 'montignies',
+    adress: 'avenue du centenaire',
+    bakeryId: 2,
+    img: 'montignies.png'
+  }
 
   products: Product[] = [
     {
@@ -30,7 +38,8 @@ export class BakeryComponent implements OnInit{
       price: 1.84,
       qty: 0,
       desc: "délicieux pain au chocolat fait maison à partir d'ingrédient naturelle et de qualité!",
-      picture: "/painAuChocolat.jpg"
+      picture: "/painAuChocolat.jpg",
+      bakeryId: 1
     },
     {
       id: 2,
@@ -38,7 +47,8 @@ export class BakeryComponent implements OnInit{
       price: 1.5,
       qty: 0,
       desc: "délicieux croissant fait maison à partir d'ingrédient naturelle et de qualité!",
-      picture: "/croissant.jpg"
+      picture: "/croissant.jpg",
+      bakeryId: 1
     },
     {
       id: 3,
@@ -46,7 +56,8 @@ export class BakeryComponent implements OnInit{
       price: 2,
       qty: 0,
       desc: "Baguette fait maison à partir d'ingrédient naturelle et de qualité!",
-      picture: "/baguette.jpg"
+      picture: "/baguette.jpg",
+      bakeryId: 1
     }
   ]
 
@@ -54,7 +65,7 @@ export class BakeryComponent implements OnInit{
   {
     id: 1,
     date: new Date(),
-    location: null,
+    location: this.location01,
     products: [],
     state: "shopping",
     userId: 15,
@@ -71,9 +82,9 @@ export class BakeryComponent implements OnInit{
     // retrieve location
     let locationId: number|any = this.route.snapshot.paramMap.get('id');
     if(locationId){
-      this.locationService.getLocation(locationId).subscribe((data) => {
+/*       this.locationService.getLocation(locationId).subscribe((data) => {
         this.location = data;
-      });
+      }); */
     }else{
       this.errorMessage = "Une erreur inatendue s'est produite, veuillez réessayer plus tard.";
     }
@@ -113,23 +124,33 @@ export class BakeryComponent implements OnInit{
     }
   }
 
+  clearInstance(){
+    
+  }
+
   addInCard(){
     console.log('triggered: addInCard()');
     console.log(this.order);
     this.products.forEach(product => {
       if(product.qty > 0){
-        console.log(this.order.products!.find(el => el.id == product.id))
-        if(this.order.products!.find(el => el.id == product.id)){
-          this.order.products!.find(el => el.id == product.id)!.qty += product.qty;
+        if(this.order.products?.length == 0){
+          console.log('je suis le premier produit de la commande');
+          this.order.products.push(product);
         }else{
-          this.order.products?.push(product);
+          this.order.products?.forEach(el => {
+            if(product.id == el.id){
+              el.qty += product.qty;
+            }
+          });
         }
       }
+      // Send update order to db or create it if no exist
+      // TO DO
     });
-    // this.orderService.putOrder(this.order);
-    this.products.forEach(product => {
-      product.qty =0;
-    });
-
+    this.clearInstance();
   }
+
+
 }
+
+

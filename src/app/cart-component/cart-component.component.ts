@@ -37,7 +37,8 @@ export class CartComponentComponent implements OnInit {
       price: 1.84,
       qty: 0,
       desc: "délicieux pain au chocolat fait maison à partir d'ingrédient naturelle et de qualité!",
-      picture: "/painAuChocolat.jpg"
+      picture: "/painAuChocolat.jpg",
+      bakeryId: 1
     },
     {
       id: 2,
@@ -45,7 +46,8 @@ export class CartComponentComponent implements OnInit {
       price: 1.5,
       qty: 0,
       desc: "délicieux croissant fait maison à partir d'ingrédient naturelle et de qualité!",
-      picture: "/croissant.jpg"
+      picture: "/croissant.jpg",
+      bakeryId: 1
     },
     {
       id: 3,
@@ -53,7 +55,8 @@ export class CartComponentComponent implements OnInit {
       price: 2,
       qty: 0,
       desc: "Baguette fait maison à partir d'ingrédient naturelle et de qualité!",
-      picture: "/baguette.jpg"
+      picture: "/baguette.jpg",
+      bakeryId: 1
     }
   ]
 
